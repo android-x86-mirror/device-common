@@ -23,21 +23,13 @@ PRODUCT_PACKAGES := \
     Galaxy4 \
     GlobalTime \
     HoloSpiralWallpaper \
-    JETBoy \
     LiveWallpapers \
     LiveWallpapersPicker \
-    LunarLander \
     MagicSmokeWallpapers \
-    NoiseField \
     NotePad \
     PhaseBeam \
     Provision \
-    RSSReader \
-    Snake \
     SpareParts \
-    SpeechRecorder \
-    SoundRecorder \
-    Stk \
     Superuser \
     VideoEditor \
     VisualizationWallpapers \

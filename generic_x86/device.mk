@@ -81,3 +81,6 @@ $(call inherit-product-if-exists,external/svox/pico/lang/all_pico_languages.mk)
 
 # Get GMS
 $(call inherit-product-if-exists,vendor/google/products/gms.mk)
+
+# Get Arm translator
+$(call inherit-product-if-exists,vendor/intel/houdini.mk)

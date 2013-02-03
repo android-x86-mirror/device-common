@@ -12,7 +12,7 @@ loglevel 3
 
 # setup the global environment
     export PATH /sbin:/vendor/bin:/system/sbin:/system/bin:/system/xbin
-    export LD_LIBRARY_PATH /vendor/lib:/system/lib
+    export LD_LIBRARY_PATH /vendor/lib:/system/lib:/system/lib/arm
     export ANDROID_BOOTLOGO 1
     export ANDROID_ROOT /system
     export ANDROID_ASSETS /system/app
@@ -520,6 +520,10 @@ service dumpstate /system/bin/dumpstate -s
     disabled
     oneshot
 
+service enable_houdini /system/bin/enable_houdini
+    class main
+    oneshot
+
 service powerbtnd /system/bin/powerbtnd
     class main
 
@@ -539,6 +543,26 @@ service sdcard /system/bin/sdcard /data/media 1023 1023
     disabled
 
 service logcat /system/bin/logcat -v threadtime -f /data/log.txt
+    disabled
+    oneshot
+
+service dhcpcd_wlan0 /system/bin/dhcpcd -ABDKL
+    class main
+    disabled
+    oneshot
+
+service iprenew_wlan0 /system/bin/dhcpcd -n
+    class main
+    disabled
+    oneshot
+
+service dhcpcd_eth0 /system/bin/dhcpcd -ABDKL
+    class main
+    disabled
+    oneshot
+
+service iprenew_eth0 /system/bin/dhcpcd -n
+    class main
     disabled
     oneshot
 

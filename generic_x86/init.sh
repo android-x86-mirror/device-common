@@ -8,6 +8,7 @@ case "$board" in
 		;;
 esac
 
+alsa_ctl init
 alsa_amixer set Master on
 alsa_amixer set Master 100
 alsa_amixer set Headphone on
@@ -35,6 +36,11 @@ chown 1000.1000 ${brfile:-/sys/class/backlight/acpi_video0/brightness}
 
 # disable cursor blinking
 [ "$(getprop system_init.startsurfaceflinger)" = "0" ] && echo -e '\033[?17;0;0c' > /dev/tty0
+
+# enable automatic frequency scaling
+for cpu in /sys/devices/system/cpu/cpu*; do
+	echo ondemand > $cpu/cpufreq/scaling_governor
+done
 
 # a hack for USB modem
 lsusb | grep 1a8d:1000 && eject

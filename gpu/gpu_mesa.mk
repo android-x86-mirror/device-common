@@ -11,3 +11,6 @@
 PRODUCT_PACKAGES := \
     libGLES_mesa    \
     gralloc.$(TARGET_PRODUCT)
+
+PRODUCT_PROPERTY_OVERRIDES := \
+    ro.opengles.version = 131072
