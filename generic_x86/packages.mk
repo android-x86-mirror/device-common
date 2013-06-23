@@ -28,6 +28,7 @@ PRODUCT_PACKAGES := \
     MagicSmokeWallpapers \
     NotePad \
     PhaseBeam \
+    PinyinIME \
     Provision \
     SpareParts \
     Superuser \
